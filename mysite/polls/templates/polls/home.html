@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Dealership</title>
+</head>
+<body>
+
+    <h1>Car Dealership Dashboard</h1>
+
+    <hr>
+
+    <h2>Salespeople</h2>
+    {% for s in salespeople %}
+        <p>{{ s.first_name }} {{ s.last_name }}</p>
+    {% empty %}
+        <p>No salespeople</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Mechanics</h2>
+    {% for m in mechanics %}
+        <p>{{ m.first_name }} {{ m.last_name }}</p>
+    {% empty %}
+        <p>No mechanics</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Customers</h2>
+    {% for c in customers %}
+        <p>{{ c.first_name }} {{ c.last_name }} - {{ c.phone_number }}</p>
+    {% empty %}
+        <p>No customers</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Cars</h2>
+    {% for car in cars %}
+        <p>{{ car.make }} {{ car.model }} ({{ car.year }}) - {{ car.colour }}</p>
+    {% empty %}
+        <p>No cars</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Sales Invoices</h2>
+    {% for i in invoices %}
+        <p>{{ i.invoice_number }} - {{ i.customer }} - {{ i.car }}</p>
+    {% empty %}
+        <p>No invoices</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Services</h2>
+    {% for s in services %}
+        <p>{{ s.service_name }} - €{{ s.hourly_rate }}</p>
+    {% empty %}
+        <p>No services</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Service Tickets</h2>
+    {% for t in tickets %}
+        <p>{{ t.service_ticket_number }} - {{ t.customer }} - {{ t.car }}</p>
+    {% empty %}
+        <p>No tickets</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Service Mechanics</h2>
+    {% for sm in servicemechanics %}
+        <p>{{ sm.mechanic }} - {{ sm.service }} - {{ sm.hours }} hours</p>
+    {% empty %}
+        <p>No service mechanic records</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Parts</h2>
+    {% for p in parts %}
+        <p>{{ p.part_number }} - {{ p.description }}</p>
+    {% empty %}
+        <p>No parts</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Parts Used</h2>
+    {% for pu in partsused %}
+        <p>{{ pu.part }} - Used: {{ pu.number_used }} - {{ pu.service_ticket }}</p>
+    {% empty %}
+        <p>No parts used</p>
+    {% endfor %}
+
+</body>
+</html>
