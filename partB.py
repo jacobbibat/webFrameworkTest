@@ -40,7 +40,7 @@ class TestMusicPlaylist(unittest.TestCase):
         playlist = Playlist("My Playlist")
         self.assertNotIsInstance(playlist, Artist)
 
-    # Test identical and unidentical but similar objects (2 tests)
+    # Test identical and unidentical but similar objects 
 
     def test_identical_objects(self):
         song1 = Song("Moonlight", "XXXTentacion", 2018)
